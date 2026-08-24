@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Test &amp; Memory Game – Play Free Online Memory Tests</title>
+<meta name="description" content="Play free memory games and take memory tests online. Test your photographic and eidetic memory with our fun, free memory challenges.">
+<link rel="canonical" href="https://memorygametest.com/">
+<meta name="theme-color" content="#6c5ce7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E">
+<!-- Google Analytics 4: TODO replace G-XXXXXXXXXX with your new GA4 Measurement ID for memorygametest.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<style>
+  :root{--bg:#f8f7fd;--card:#fff;--ink:#2d2a3e;--muted:#8a86a3;--accent:#6c5ce7;--accent2:#5b6ee1;--soft:#f0eeff;--line:#e8e6f5;--radius:14px;--shadow:0 4px 20px rgba(60,52,120,.08);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.2px;}
+  header{background:#fff;border-bottom:1px solid var(--line);padding:16px 0;}
+  header .inner{max-width:960px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .logo{background:var(--accent);color:#fff;font-family:Georgia,serif;font-size:15px;font-weight:700;padding:7px 14px;border-radius:8px;text-decoration:none;}
+  nav.topnav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap;}
+  nav.topnav a{color:var(--muted);font-size:14px;text-decoration:none;}
+  nav.topnav a:hover{color:var(--accent);}
+  main{max-width:960px;margin:0 auto;padding:36px 20px 64px;}
+  .hero{text-align:center;margin-bottom:32px;}
+  .hero h1{font-size:34px;line-height:1.25;}
+  .hero p{color:var(--muted);margin-top:12px;font-size:16px;max-width:640px;margin-left:auto;margin-right:auto;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:24px;}
+  .card h2{font-size:20px;margin-bottom:12px;}
+  .tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+  .tab{padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-size:14px;font-weight:600;color:var(--ink);transition:all .15s;}
+  .tab.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .game-panel{display:none;}
+  .game-panel.active{display:block;}
+  .board{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:380px;margin:0 auto;}
+  .cell{aspect-ratio:1;border-radius:12px;background:var(--soft);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:32px;cursor:pointer;transition:all .15s;user-select:none;}
+  .cell.flipped{background:#fff;border-color:var(--accent);}
+  .cell.matched{background:#e8f7ef;border-color:#4caf50;}
+  .cell:hover{border-color:var(--accent);}
+  .stats{display:flex;gap:20px;justify-content:center;margin:16px 0;flex-wrap:wrap;}
+  .stat{text-align:center;}
+  .stat b{display:block;font-size:24px;color:var(--accent);}
+  .stat span{font-size:12px;color:var(--muted);}
+  .btn{background:var(--accent);color:#fff;border:none;border-radius:10px;padding:11px 26px;font-size:15px;font-weight:600;cursor:pointer;transition:background .15s;}
+  .btn:hover{background:#5a4bd6;}
+  .btn-center{display:flex;justify-content:center;margin-top:16px;}
+  .num-display{font-size:40px;font-weight:700;text-align:center;letter-spacing:8px;font-family:Georgia,serif;color:var(--accent);min-height:60px;margin:12px 0;}
+  .num-input{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+  .num-input input{width:100%;max-width:280px;padding:12px 16px;border:1.5px solid var(--line);border-radius:10px;font-size:20px;text-align:center;letter-spacing:3px;}
+  .num-input input:focus{outline:none;border-color:var(--accent);}
+  .result{text-align:center;font-size:18px;font-weight:700;margin:12px 0;min-height:30px;}
+  .result.good{color:#4caf50;}
+  .result.bad{color:#e74c3c;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+  .scene-card{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;text-decoration:none;color:var(--ink);transition:all .15s;}
+  .scene-card:hover{border-color:var(--accent);box-shadow:var(--shadow);}
+  .scene-card b{font-size:15px;display:block;margin-bottom:4px;color:#5a4bd6;}
+  .scene-card span{font-size:13.5px;color:var(--muted);}
+  .faq-item{margin-bottom:18px;}
+  .faq-item b{display:block;margin-bottom:4px;font-size:15px;}
+  .faq-item p{font-size:14.5px;color:#6b6487;}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:28px 0 48px;border-top:1px solid var(--line);}
+  footer a{color:var(--accent);text-decoration:none;}
+  @media(max-width:600px){.hero h1{font-size:26px;}}
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <a class="logo" href="/">🧠 Memory Test</a>
+    <nav class="topnav">
+      <a href="/">Play</a>
+      <a href="/photographic-memory-test.html">Photographic Memory</a>
+      <a href="/eidetic-memory-test.html">Eidetic Memory</a>
+      <a href="/memory-test-online.html">Memory Test</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Memory Test &amp; Memory Game</h1>
+    <p>Test your memory with our free online games. Play the classic card-matching memory game, or challenge your brain with the number memory test. No signup, free forever.</p>
+  </div>
+
+  <div class="card">
+    <div class="tabs">
+      <span class="tab active" data-tab="game">🃏 Memory Game</span>
+      <span class="tab" data-tab="test">🔢 Number Memory Test</span>
+    </div>
+
+    <div class="game-panel active" id="panel-game">
+      <h2 style="text-align:center;">Card Matching Memory Game</h2>
+      <p style="text-align:center;color:var(--muted);font-size:14px;margin-bottom:14px;">Flip the cards and find all matching pairs. Fewer moves = better memory!</p>
+      <div class="stats">
+        <div class="stat"><b id="moves">0</b><span>Moves</span></div>
+        <div class="stat"><b id="pairs">0/8</b><span>Pairs</span></div>
+        <div class="stat"><b id="timer">0s</b><span>Time</span></div>
+      </div>
+      <div class="board" id="board"></div>
+      <div class="btn-center"><button class="btn" id="restartBtn">🔄 New Game</button></div>
+    </div>
+
+    <div class="game-panel" id="panel-test">
+      <h2 style="text-align:center;">Number Memory Test</h2>
+      <p style="text-align:center;color:var(--muted);font-size:14px;margin-bottom:14px;">Memorize the number, then type it after it disappears.</p>
+      <div class="stats">
+        <div class="stat"><b id="level">3</b><span>Digits</span></div>
+        <div class="stat"><b id="best">—</b><span>Best</span></div>
+      </div>
+      <div class="num-display" id="numDisplay">Press Start</div>
+      <div class="num-input" id="numInputWrap" style="display:none;">
+        <input type="text" id="numInput" inputmode="numeric" maxlength="20" placeholder="Type the number...">
+      </div>
+      <div class="result" id="testResult"></div>
+      <div class="btn-center"><button class="btn" id="testBtn">▶ Start Test</button></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📚 Memory Tests &amp; Guides</h2>
+    <div class="grid">
+      <a class="scene-card" href="/photographic-memory-test.html"><b>📷 Photographic Memory Test</b><span>Can you recall images with perfect detail? Take the test.</span></a>
+      <a class="scene-card" href="/eidetic-memory-test.html"><b>🧠 Eidetic Memory Test</b><span>Test your ability to hold vivid mental images.</span></a>
+      <a class="scene-card" href="/memory-test-online.html"><b>🔢 Memory Test Online</b><span>Classic number memory challenges to train your brain.</span></a>
+      <a class="scene-card" href="/memory-game.html"><b>🃏 Memory Game</b><span>Classic card-matching game to sharpen your recall.</span></a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>How Memory Tests Work</h2>
+    <p style="font-size:15px;color:#6b6487;">Memory games and tests measure your short-term working memory — the system your brain uses to hold information temporarily. Regular practice with memory games can improve your concentration, pattern recognition, and recall speed. The number memory test increases in difficulty as you succeed, challenging your working memory capacity.</p>
+    <p style="font-size:15px;color:#6b6487;margin-top:10px;">Curious about the difference between photographic and eidetic memory? <a href="/photographic-memory-test.html" style="color:var(--accent);">Learn more</a>.</p>
+  </div>
+
+  <div class="card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><b>What is a memory test?</b><p>A memory test measures how well you can remember and recall information — like a sequence of numbers or the position of matching cards. Our tests are fun, free, and take less than a minute.</p></div>
+    <div class="faq-item"><b>Can memory games improve my memory?</b><p>Yes! Regular practice with memory games trains your working memory, improves focus, and strengthens pattern recognition. Think of it as a workout for your brain.</p></div>
+    <div class="faq-item"><b>What is the difference between photographic and eidetic memory?</b><p>Photographic memory refers to recalling visual information with photographic accuracy, while eidetic memory is the ability to hold a vivid mental image for a short period. Both are rare and fascinating. <a href="/photographic-memory-test.html" style="color:var(--accent);">Learn more</a>.</p></div>
+    <div class="faq-item"><b>Are these memory tests scientifically accurate?</b><p>Our tests are designed for fun and self-improvement, not medical diagnosis. If you have concerns about your memory, please consult a healthcare professional.</p></div>
+  </div>
+</main>
+
+<footer>
+  Copyright <span id="year"></span> © <a href="/">Memory Test</a>. Train your brain, free forever.<br>
+  <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+</footer>
+
+<script>
+/* ---------- Memory Game (Card Matching) ---------- */
+const EMOJIS = ['🍎','🍌','🍇','🍓','🍊','🍉','🍒','🥝'];
+let boardEl, movesEl, pairsEl, timerEl, restartBtn;
+let firstCard=null, lock=false, moves=0, pairsFound=0, timerInt=null, seconds=0;
+
+function initGame(){
+  boardEl=document.getElementById('board'); movesEl=document.getElementById('moves');
+  pairsEl=document.getElementById('pairs'); timerEl=document.getElementById('timer');
+  restartBtn=document.getElementById('restartBtn');
+  restartBtn.addEventListener('click',startGame);
+  startGame();
+}
+function startGame(){
+  clearInterval(timerInt); moves=0; pairsFound=0; seconds=0;
+  movesEl.textContent='0'; pairsEl.textContent='0/8'; timerEl.textContent='0s';
+  const cards=[...EMOJIS,...EMOJIS].sort(()=>Math.random()-0.5);
+  boardEl.innerHTML='';
+  cards.forEach((emoji,idx)=>{
+    const cell=document.createElement('div');
+    cell.className='cell'; cell.dataset.emoji=emoji;
+    cell.addEventListener('click',()=>flipCard(cell));
+    boardEl.appendChild(cell);
+  });
+  timerInt=setInterval(()=>{seconds++;timerEl.textContent=seconds+'s';},1000);
+}
+function flipCard(cell){
+  if(lock||cell.classList.contains('flipped')||cell.classList.contains('matched'))return;
+  cell.classList.add('flipped'); cell.textContent=cell.dataset.emoji;
+  if(!firstCard){firstCard=cell;return;}
+  moves++; movesEl.textContent=moves;
+  if(firstCard.dataset.emoji===cell.dataset.emoji){
+    firstCard.classList.add('matched'); cell.classList.add('matched');
+    pairsFound++; pairsEl.textContent=pairsFound+'/8';
+    if(pairsFound===8){
+      clearInterval(timerInt);
+      setTimeout(()=>alert('🎉 You won in '+moves+' moves and '+seconds+' seconds!'),300);
+      gtag('event','memory_game_won',{moves:moves,seconds:seconds});
+    }
+    firstCard=null;
+  }else{
+    lock=true;
+    const c1=firstCard, c2=cell;
+    setTimeout(()=>{c1.classList.remove('flipped');c1.textContent='';c2.classList.remove('flipped');c2.textContent='';lock=false;},700);
+    firstCard=null;
+  }
+  gtag('event','memory_game_move',{});
+}
+
+/* ---------- Number Memory Test ---------- */
+let levelEl, bestEl, numDisplay, numInput, numInputWrap, testResult, testBtn;
+let currentNum='', level=3, best=0, isShowing=false;
+
+function initTest(){
+  levelEl=document.getElementById('level'); bestEl=document.getElementById('best');
+  numDisplay=document.getElementById('numDisplay'); numInput=document.getElementById('numInput');
+  numInputWrap=document.getElementById('numInputWrap'); testResult=document.getElementById('testResult');
+  testBtn=document.getElementById('testBtn');
+  best=parseInt(localStorage.getItem('mem_best')||'0');
+  bestEl.textContent=best||'—';
+  testBtn.addEventListener('click',startTest);
+  numInput.addEventListener('keydown',e=>{if(e.key==='Enter')checkAnswer();});
+}
+function startTest(){
+  if(isShowing)return;
+  testResult.textContent=''; numInput.value='';
+  currentNum=Array.from({length:level},()=>Math.floor(Math.random()*10)).join('');
+  numDisplay.textContent=currentNum;
+  numDisplay.style.color='var(--accent)';
+  isShowing=true; testBtn.textContent='⏳ Remember...';
+  gtag('event','memory_test_start',{level:level});
+  setTimeout(()=>{
+    numDisplay.textContent='❓';
+    numInputWrap.style.display='flex';
+    numInput.focus(); isShowing=false;
+    testBtn.textContent='✓ Check';
+  },1500+level*300);
+}
+function checkAnswer(){
+  const answer=numInput.value.trim();
+  if(!answer)return;
+  if(answer===currentNum){
+    level++; levelEl.textContent=level;
+    if(level-1>best){best=level-1;localStorage.setItem('mem_best',String(best));bestEl.textContent=best;}
+    testResult.textContent='✅ Correct! Next level: '+level+' digits';
+    testResult.className='result good';
+    gtag('event','memory_test_correct',{level:level});
+    numInputWrap.style.display='none'; testBtn.textContent='▶ Next Level';
+  }else{
+    testResult.textContent='❌ Wrong! The number was '+currentNum+' — you reached level '+(level-1);
+    testResult.className='result bad';
+    gtag('event','memory_test_wrong',{level:level});
+    numInputWrap.style.display='none'; testBtn.textContent='▶ Try Again';
+    level=3; levelEl.textContent=level;
+  }
+}
+
+/* ---------- Tabs ---------- */
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    document.querySelectorAll('.game-panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+  });
+});
+
+initGame(); initTest();
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
