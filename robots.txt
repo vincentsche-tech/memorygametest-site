@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://memorygametest.com/sitemap.xml
+Sitemap: https://www.memorygametest.com/sitemap.xml
