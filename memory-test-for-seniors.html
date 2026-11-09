@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Test for Seniors – Free 5-Word Recall Test</title>
+<meta name="description" content="A free memory test for seniors you can take in two minutes. Remember five words, type them back, and see your score. No signup, no download.">
+<link rel="canonical" href="https://www.memorygametest.com/memory-test-for-seniors.html">
+<meta name="theme-color" content="#6c5ce7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%A0%3C/text%3E%3C/svg%3E">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4JM0FBRGD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q4JM0FBRGD');
+</script>
+<style>
+  :root{--bg:#f8f7fd;--card:#fff;--ink:#2d2a3e;--muted:#6f6a8a;--accent:#6c5ce7;--accent2:#5b6ee1;--soft:#f0eeff;--line:#e8e6f5;--radius:14px;--shadow:0 4px 20px rgba(60,52,120,.08);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px;}
+  h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:700;letter-spacing:-.2px;}
+  header{background:#fff;border-bottom:1px solid var(--line);padding:16px 0;}
+  header .inner{max-width:960px;margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  .logo{background:var(--accent);color:#fff;font-family:Georgia,serif;font-size:15px;font-weight:700;padding:7px 14px;border-radius:8px;text-decoration:none;}
+  nav.topnav{margin-left:auto;display:flex;gap:16px;flex-wrap:wrap;}
+  nav.topnav a{color:var(--muted);font-size:14px;text-decoration:none;}
+  nav.topnav a:hover{color:var(--accent);}
+  main{max-width:960px;margin:0 auto;padding:36px 20px 64px;}
+  .hero{text-align:center;margin-bottom:26px;}
+  .hero h1{font-size:31px;line-height:1.25;}
+  .hero p{color:var(--muted);margin-top:12px;font-size:17px;max-width:660px;margin-left:auto;margin-right:auto;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:24px;}
+  .card h2{font-size:21px;margin-bottom:10px;}
+  .card h3{font-size:18px;margin:20px 0 8px;color:#5a4bd6;}
+  .card p{font-size:16.5px;color:#4e4767;margin-bottom:12px;}
+  .card ul,.card ol{margin:0 0 12px 22px;}
+  .card li{font-size:16.5px;color:#4e4767;margin-bottom:8px;}
+
+  /* ---- test widget ---- */
+  .test{background:#fff;border:2px solid var(--accent);border-radius:16px;box-shadow:0 6px 28px rgba(108,92,231,.14);padding:30px;margin-bottom:26px;text-align:center;}
+  .test h2{font-size:22px;margin-bottom:6px;}
+  .test .sub{color:var(--muted);font-size:15.5px;margin-bottom:20px;}
+  .btn{display:inline-block;background:var(--accent);color:#fff;font-size:18px;font-weight:600;padding:15px 34px;border:none;border-radius:12px;cursor:pointer;font-family:inherit;min-width:200px;}
+  .btn:hover{background:#5a4bd6;}
+  .btn:disabled{background:#b9b3d6;cursor:not-allowed;}
+  .btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent);font-size:16px;padding:12px 26px;}
+  .words{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:8px 0 18px;}
+  .words span{font-family:Georgia,serif;font-size:30px;font-weight:700;background:var(--soft);color:#4a3cc0;padding:14px 22px;border-radius:12px;min-width:96px;}
+  .timer{font-size:44px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;margin:6px 0 14px;}
+  .field{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:14px 0 10px;}
+  .field input{flex:1 1 340px;max-width:420px;font-size:18px;font-family:inherit;padding:14px 16px;border:2px solid var(--line);border-radius:12px;color:var(--ink);}
+  .field input:focus{outline:none;border-color:var(--accent);}
+  .hint{font-size:14.5px;color:var(--muted);}
+  .score{font-size:52px;font-weight:700;color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums;}
+  .score-of{font-size:18px;color:var(--muted);margin-bottom:10px;}
+  .reveal{font-size:16px;color:#4e4767;margin-bottom:16px;}
+  .reveal b{color:#4a3cc0;}
+  .hidden{display:none !important;}
+
+  .notice{background:#fff8e6;border:1px solid #f0d9a8;border-radius:12px;padding:18px 20px;margin-bottom:24px;}
+  .notice p{font-size:15.5px;color:#6b5a2e;margin:0;}
+  .notice b{display:block;margin-bottom:6px;font-size:16px;color:#5c4a1e;}
+
+  .faq-item{margin-bottom:18px;}
+  .faq-item b{display:block;margin-bottom:4px;font-size:16px;}
+  .faq-item p{font-size:16px;color:#5b5477;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+  .scene-card{display:block;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;text-decoration:none;color:var(--ink);transition:all .15s;}
+  .scene-card:hover{border-color:var(--accent);box-shadow:var(--shadow);}
+  .scene-card b{font-size:15px;display:block;margin-bottom:4px;color:#5a4bd6;}
+  .scene-card span{font-size:13.5px;color:var(--muted);}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:28px 0 48px;border-top:1px solid var(--line);}
+  footer a{color:var(--accent);text-decoration:none;}
+  @media(max-width:600px){
+    body{font-size:16px;}
+    .hero h1{font-size:25px;}
+    .words span{font-size:24px;padding:10px 16px;min-width:78px;}
+    .test{padding:22px 18px;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="inner">
+    <a class="logo" href="/">🧠 Memory Test</a>
+    <nav class="topnav">
+      <a href="/">Play</a>
+      <a href="/memory-test-for-seniors.html">For Seniors</a>
+      <a href="/short-term-memory-test.html">Short-Term</a>
+      <a href="/working-memory-test.html">Working</a>
+      <a href="/long-term-memory-test.html">Long-Term</a>
+      <a href="/photographic-memory-test.html">Photographic</a>
+      <a href="/memory-test-cards.html">Cards</a>
+      <a href="/memory-test-online.html">Memory Test</a>
+      <a href="/about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Memory Test for Seniors</h1>
+    <p>A short, free memory check you can do at your own pace. You will see five words, then type them back from memory. It takes about two minutes and nothing is stored.</p>
+  </div>
+
+  <!-- ===== interactive test ===== -->
+  <div class="test" id="testBox">
+    <h2>Five-Word Recall</h2>
+    <p class="sub" id="sub">Click start when you are ready. You will have a few seconds to read the words.</p>
+
+    <div id="stage-intro">
+      <button class="btn" id="startBtn" type="button">Start the test</button>
+    </div>
+
+    <div id="stage-show" class="hidden">
+      <div class="timer" id="timer">10</div>
+      <div class="words" id="wordList"></div>
+      <p class="hint">Read them out loud if it helps.</p>
+    </div>
+
+    <div id="stage-input" class="hidden">
+      <p style="font-size:17px;color:#4e4767;margin-bottom:4px;">Now type the words you remember.</p>
+      <div class="field">
+        <input id="answer" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="e.g. apple, chair, ...">
+      </div>
+      <p class="hint">Separate words with a comma or a space. Order does not matter.</p>
+      <p style="margin-top:16px;"><button class="btn" id="checkBtn" type="button">Check my score</button></p>
+    </div>
+
+    <div id="stage-result" class="hidden">
+      <div class="score" id="scoreNum">0</div>
+      <div class="score-of">out of 5 words</div>
+      <p class="reveal" id="revealText"></p>
+      <p style="font-size:16.5px;color:#4e4767;max-width:560px;margin:0 auto 18px;" id="resultNote"></p>
+      <button class="btn ghost" id="againBtn" type="button">Take it again</button>
+    </div>
+  </div>
+
+  <div class="notice">
+    <p><b>Please read this first</b>This page is a free word-recall exercise for general interest. It is not a medical test, it has not been validated in a clinical setting, and a score here cannot tell you whether you or someone else has memory problems. Only a qualified doctor can assess memory. If you are worried, book an appointment — that is always the right move.</p>
+  </div>
+
+  <div class="card">
+    <h3>What this memory test for seniors actually does</h3>
+    <p>You are asked to hold five unrelated words in mind for a few seconds, then recall them. That short gap is the interesting part: it leans on <em>short-term</em> and <em>working memory</em>, the mental workspace that holds something briefly while you do something else with it. Because the words are unrelated — no story, no obvious order — you cannot lean on meaning to carry them. You have to hold them deliberately.</p>
+    <p>Word recall in some form shows up in many informal memory checks, precisely because it is quick, needs no equipment, and is easy to repeat. What you are doing here follows that general idea. It is a small exercise, not an assessment.</p>
+
+    <h3>How to take the test properly</h3>
+    <ol>
+      <li><b>Sit somewhere quiet.</b> Background conversation is the most common reason people score lower than they otherwise would.</li>
+      <li><b>Read the words out loud.</b> Saying them engages more than just looking — most people find it noticeably easier.</li>
+      <li><b>Do not write anything down.</b> The point is to hold them in your head, not on paper.</li>
+      <li><b>Type what comes back to you.</b> Do not worry about spelling or order. Getting the word roughly right counts.</li>
+      <li><b>Take it more than once.</b> A single attempt is noise. Two or three tries on different days tells you far more than one score.</li>
+    </ol>
+
+    <h3>What a score of 5, 4, 3, 2 or 1 means</h3>
+    <p>Here is the honest answer: not much on its own. This exercise has no cut-off point and no published norms, so a number here should not be read as good or bad. What matters far more is <b>change</b> — whether you reliably remembered five words last month and consistently manage two now. A drop that persists is worth mentioning to a doctor. A single low score after a bad night's sleep is not.</p>
+    <p>Two other things distort a score more than memory does: <b>hearing</b> and <b>attention</b>. If you mishear a word, you will not recall it. If you were distracted during the ten seconds, nothing was stored to begin with. Both are fixable, and neither is a memory problem.</p>
+
+    <h3>Normal forgetting versus something worth checking</h3>
+    <p>Forgetting a name and finding it twenty minutes later is ordinary at any age. So is walking into a room and forgetting why. Those moments are annoying, not alarming, and they happen more often when you are tired, stressed, or juggling too much.</p>
+    <p>What doctors tend to take more seriously is a pattern that interferes with daily life: forgetting how to do something you have done for years, getting lost on a familiar route, repeating the same question within minutes, struggling to follow a conversation you would once have had easily, or a family member noticing changes before you do. <b>None of that is diagnosed by a web page.</b> If any of it sounds familiar, the useful step is a conversation with a doctor, not another online test.</p>
+
+    <h3>Everyday habits that support memory</h3>
+    <p>None of these is a cure and none is dramatic, but they are the things that consistently come up in memory research and in clinical advice:</p>
+    <ul>
+      <li><b>Move daily.</b> A brisk walk counts. Blood flow matters to the brain.</li>
+      <li><b>Protect sleep.</b> Memory consolidation happens while you sleep; a run of poor nights shows up in recall quickly.</li>
+      <li><b>Stay socially engaged.</b> Conversation is cognitively demanding in a way that solitary puzzles are not.</li>
+      <li><b>Keep learning something new.</b> Novelty is what makes the effort worthwhile — repeating what you already know does less.</li>
+      <li><b>Check hearing and vision.</b> Both are commonly overlooked and both quietly depress test scores.</li>
+      <li><b>Manage blood pressure and blood sugar.</b> Vascular health is strongly linked to cognitive health.</li>
+    </ul>
+
+    <h3>Doing this with a parent or partner</h3>
+    <p>If you are running this with someone else, read the words aloud at a steady pace and let them answer without prompting. Resist the urge to help — a hint turns the exercise into a different task. And treat the result lightly. The value is in the routine of doing something together, and in noticing a change over weeks, not in the number on the screen.</p>
+  </div>
+
+  <div class="card">
+    <h2>More Memory Tests &amp; Guides</h2>
+    <div class="grid">
+      <a class="scene-card" href="/short-term-memory-test.html"><b>⏱️ Short-Term Memory Test</b><span>How much you hold right now.</span></a>
+      <a class="scene-card" href="/working-memory-test.html"><b>🧩 Working Memory Test</b><span>Holding and using information.</span></a>
+      <a class="scene-card" href="/memory-test-cards.html"><b>🃏 Memory Test Cards</b><span>Classic card matching.</span></a>
+      <a class="scene-card" href="/memory-test-online.html"><b>🔢 Memory Test Online</b><span>Number recall challenges.</span></a>
+      <a class="scene-card" href="/photographic-memory-test.html"><b>📷 Photographic Memory Test</b><span>Can you recall images perfectly?</span></a>
+      <a class="scene-card" href="/long-term-memory-test.html"><b>📚 Long-Term Memory Test</b><span>What stays with you over time.</span></a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><b>Is this memory test for seniors free?</b><p>Yes. The five-word recall exercise runs entirely in your browser, costs nothing, and needs no account, app, or download. Nothing you type is sent anywhere or saved.</p></div>
+    <div class="faq-item"><b>Can this test tell me if I have dementia or Alzheimer's?</b><p>No. This is a general word-recall exercise, not a clinical assessment, and it has no diagnostic value. Conditions like dementia and Alzheimer's are diagnosed by a doctor through a proper evaluation. If you are concerned about memory, please see a medical professional.</p></div>
+    <div class="faq-item"><b>What is a good score on a five-word memory test?</b><p>There is no official good or bad score for this exercise because it has no published norms. More useful than any single number is your own pattern over time — if your recall drops and stays down across several attempts, that is worth raising with a doctor.</p></div>
+    <div class="faq-item"><b>Why do I keep forgetting one of the five words?</b><p>Usually because it was never fully stored. If your attention drifted during the ten seconds, or you did not really look at the word, there was nothing to recall later. Hearing also plays a part — words you did not clearly register are the ones that tend to vanish.</p></div>
+    <div class="faq-item"><b>How often should seniors do a memory test?</b><p>Once every few weeks is plenty for a casual check-in, and doing it too often mostly teaches you the words. If you want something to do daily, a card-matching game is a better habit because the layout changes each round.</p></div>
+    <div class="faq-item"><b>Is it normal to forget things as you get older?</b><p>Yes. Occasional forgetting of names, appointments, or why you walked into a room is common at any age and tends to increase gradually. What is worth a doctor's attention is a change that interferes with daily living, or one that family members notice before you do.</p></div>
+    <div class="faq-item"><b>Does this work on a phone or tablet?</b><p>Yes. The test is designed to work on phones, tablets, and computers, and the text is sized for comfortable reading. A quiet room matters more than the device.</p></div>
+  </div>
+</main>
+
+<footer>
+  Copyright <span id="year"></span> © <a href="/">Memory Test</a>. Train your brain, free forever. This site does not provide medical advice.<br>
+  <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy-policy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+<script>
+(function(){
+  var WORDS = ['apple','chair','penny','river','table'];
+  var SHOW_MS = 10000;
+  var timerId = null, tickId = null;
+  var el = function(id){ return document.getElementById(id); };
+
+  function show(stage){
+    ['stage-intro','stage-show','stage-input','stage-result'].forEach(function(s){
+      el(s).classList.toggle('hidden', s !== stage);
+    });
+  }
+
+  function reset(){
+    if (timerId) { clearTimeout(timerId); timerId = null; }
+    if (tickId) { clearInterval(tickId); tickId = null; }
+    el('answer').value = '';
+    el('timer').textContent = '10';
+    el('sub').textContent = 'Click start when you are ready. You will have a few seconds to read the words.';
+    show('stage-intro');
+  }
+
+  function startShow(){
+    show('stage-show');
+    el('sub').textContent = 'Memorise these five words.';
+    var box = el('wordList');
+    box.innerHTML = '';
+    WORDS.forEach(function(w){
+      var s = document.createElement('span');
+      s.textContent = w;
+      box.appendChild(s);
+    });
+    var left = Math.round(SHOW_MS / 1000);
+    el('timer').textContent = String(left);
+    tickId = setInterval(function(){
+      left -= 1;
+      el('timer').textContent = String(Math.max(left, 0));
+    }, 1000);
+    timerId = setTimeout(function(){
+      clearInterval(tickId); tickId = null;
+      goInput();
+    }, SHOW_MS);
+  }
+
+  function goInput(){
+    show('stage-input');
+    el('sub').textContent = 'The words are hidden. Type back as many as you can.';
+    el('answer').focus();
+  }
+
+  function normalise(s){
+    return (s || '').toLowerCase().replace(/[^a-z\s]/g, ' ').split(/\s+/).filter(Boolean);
+  }
+
+  function score(){
+    var typed = normalise(el('answer').value);
+    var hits = 0, found = [];
+    WORDS.forEach(function(w){
+      var ok = typed.some(function(t){
+        return t === w || (t.length >= 4 && w.indexOf(t) === 0) || (w.length >= 4 && t.indexOf(w) === 0);
+      });
+      if (ok) { hits += 1; found.push(w); }
+    });
+    return { hits: hits, found: found };
+  }
+
+  function finish(){
+    var r = score();
+    show('stage-result');
+    el('sub').textContent = 'Here is your result.';
+    el('scoreNum').textContent = String(r.hits);
+    var missed = WORDS.filter(function(w){ return r.found.indexOf(w) === -1; });
+    el('revealText').innerHTML = 'The five words were: <b>' + WORDS.join(', ') + '</b>' +
+      (missed.length ? '<br>Missed: <b>' + missed.join(', ') + '</b>' : '');
+    var notes = {
+      5: 'All five. That is a strong result for this exercise — your attention held across the whole ten seconds.',
+      4: 'Four out of five. Very typical, and usually one word that never quite registered.',
+      3: 'Three out of five. Common, especially if the room was not quiet or you were not fully settled.',
+      2: 'Two out of five. Worth trying again on a different day in a quiet room before reading anything into it.',
+      1: 'One out of five. Try again when you are rested and alone — one attempt is not a pattern.',
+      0: 'None this time. Try again in a quiet moment; if results stay low across several days, mention it to a doctor.'
+    };
+    el('resultNote').textContent = notes[r.hits] +
+      ' Remember: this exercise cannot assess your memory in any clinical sense.';
+  }
+
+  el('startBtn').addEventListener('click', startShow);
+  el('checkBtn').addEventListener('click', finish);
+  el('againBtn').addEventListener('click', reset);
+  el('answer').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') { e.preventDefault(); finish(); }
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is this memory test for seniors free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The five-word recall exercise runs entirely in your browser, costs nothing, and needs no account, app, or download. Nothing you type is sent anywhere or saved."}},
+    {"@type": "Question", "name": "Can this test tell me if I have dementia or Alzheimer's?", "acceptedAnswer": {"@type": "Answer", "text": "No. This is a general word-recall exercise, not a clinical assessment, and it has no diagnostic value. Conditions like dementia and Alzheimer's are diagnosed by a doctor through a proper evaluation. If you are concerned about memory, please see a medical professional."}},
+    {"@type": "Question", "name": "What is a good score on a five-word memory test?", "acceptedAnswer": {"@type": "Answer", "text": "There is no official good or bad score for this exercise because it has no published norms. More useful than any single number is your own pattern over time — if your recall drops and stays down across several attempts, that is worth raising with a doctor."}},
+    {"@type": "Question", "name": "Why do I keep forgetting one of the five words?", "acceptedAnswer": {"@type": "Answer", "text": "Usually because it was never fully stored. If your attention drifted during the ten seconds, or you did not really look at the word, there was nothing to recall later. Hearing also plays a part — words you did not clearly register are the ones that tend to vanish."}},
+    {"@type": "Question", "name": "How often should seniors do a memory test?", "acceptedAnswer": {"@type": "Answer", "text": "Once every few weeks is plenty for a casual check-in, and doing it too often mostly teaches you the words. If you want something to do daily, a card-matching game is a better habit because the layout changes each round."}},
+    {"@type": "Question", "name": "Is it normal to forget things as you get older?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Occasional forgetting of names, appointments, or why you walked into a room is common at any age and tends to increase gradually. What is worth a doctor's attention is a change that interferes with daily living, or one that family members notice before you do."}},
+    {"@type": "Question", "name": "Does this work on a phone or tablet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The test is designed to work on phones, tablets, and computers, and the text is sized for comfortable reading. A quiet room matters more than the device."}}
+  ]
+}
+</script>
+</body>
+</html>
